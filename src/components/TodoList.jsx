@@ -23,13 +23,15 @@ const TodoList = () => {
   }, []);
 
   const fetchTodos = async () => {
-    const response = await axios.get("http://localhost:5001/todos");
+    const response = await axios.get(
+      "https://todobackend-50ed4b116756.herokuapp.com/todos"
+    );
     setTodos(response.data);
   };
 
   const addTodo = async () => {
     if (newTodo.trim() !== "") {
-      await axios.post("http://localhost:5001/todos", {
+      await axios.post("https://todobackend-50ed4b116756.herokuapp.com/todos", {
         text: newTodo,
         completed: false,
         date: selectedDate,
@@ -48,7 +50,9 @@ const TodoList = () => {
 
   const toggleTodo = async (_id) => {
     try {
-      const response = await axios.put(`http://localhost:5001/todos/${_id}`);
+      const response = await axios.put(
+        `https://todobackend-50ed4b116756.herokuapp.com/todos/${_id}`
+      );
       if (response.data && response.data._id) {
         fetchTodos();
       } else {
@@ -66,7 +70,9 @@ const TodoList = () => {
     }
 
     try {
-      await axios.delete(`http://localhost:5001/todos/${_id}`);
+      await axios.delete(
+        `https://todobackend-50ed4b116756.herokuapp.com/todos/${_id}`
+      );
       fetchTodos();
     } catch (error) {
       console.error("Error deleting todo:", error);
