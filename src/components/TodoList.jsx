@@ -18,20 +18,20 @@ const TodoList = () => {
   const [selectedDate, setSelectedDate] = useState("");
   const [selectedTime, setSelectedTime] = useState("");
 
+  const baseURL = "https://todobackend-50ed4b116756.herokuapp.com";
+
   useEffect(() => {
     fetchTodos();
   }, []);
 
   const fetchTodos = async () => {
-    const response = await axios.get(
-      "https://todobackend-50ed4b116756.herokuapp.com/todos"
-    );
+    const response = await axios.get(`${baseURL}/todos`);
     setTodos(response.data);
   };
 
   const addTodo = async () => {
     if (newTodo.trim() !== "") {
-      await axios.post("https://todobackend-50ed4b116756.herokuapp.com/todos", {
+      await axios.post(`${baseURL}/todos`, {
         text: newTodo,
         completed: false,
         date: selectedDate,
@@ -50,9 +50,7 @@ const TodoList = () => {
 
   const toggleTodo = async (_id) => {
     try {
-      const response = await axios.put(
-        `https://todobackend-50ed4b116756.herokuapp.com/todos/${_id}`
-      );
+      const response = await axios.put(`${baseURL}/todos/${_id}`);
       if (response.data && response.data._id) {
         fetchTodos();
       } else {
@@ -70,9 +68,7 @@ const TodoList = () => {
     }
 
     try {
-      await axios.delete(
-        `https://todobackend-50ed4b116756.herokuapp.com/todos/${_id}`
-      );
+      await axios.delete(`${baseURL}/todos/${_id}`);
       fetchTodos();
     } catch (error) {
       console.error("Error deleting todo:", error);
