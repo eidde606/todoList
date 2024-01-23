@@ -86,6 +86,7 @@ const TodoList = () => {
           Todo List
         </Typography>
         <div style={{ marginBottom: 16 }}>
+          {/* Use responsive styling for the TextField */}
           <TextField
             type="text"
             variant="outlined"
@@ -101,7 +102,8 @@ const TodoList = () => {
               borderColor: "red",
             }}
           />
-          <div style={{ display: "flex" }}>
+          <div style={{ display: "flex", flexDirection: "column" }}>
+            {/* Use responsive styling for date and time inputs */}
             <TextField
               type="date"
               value={selectedDate}
@@ -110,7 +112,7 @@ const TodoList = () => {
                 shrink: true,
               }}
               style={{
-                marginRight: 10,
+                marginBottom: 10,
                 backgroundColor: "white",
                 borderRadius: "5px",
                 height: "55px",
@@ -122,17 +124,19 @@ const TodoList = () => {
               value={selectedTime}
               onChange={(e) => setSelectedTime(e.target.value)}
               style={{
-                marginRight: 10,
+                marginBottom: 10,
                 backgroundColor: "white",
                 borderRadius: "5px",
+                height: "55px",
               }}
             />
           </div>
+          {/* Use responsive styling for the Button */}
           <Button
             variant="contained"
             color="primary"
             onClick={addTodo}
-            style={{ marginTop: 10, backgroundColor: "#4B0082" }}
+            style={{ marginTop: 10, backgroundColor: "#4B0082", width: "100%" }}
           >
             Add Task
           </Button>

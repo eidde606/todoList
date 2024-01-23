@@ -17,6 +17,8 @@ const TodoItem = ({ todo, toggleTodo, deleteTodo }) => {
         backgroundColor: "#E6E6FA",
         marginBottom: 10,
         borderRadius: "4px",
+        display: "flex", // Use flexbox to arrange items horizontally
+        alignItems: "center", // Align items in the center
       }}
     >
       <Checkbox
@@ -39,8 +41,8 @@ const TodoItem = ({ todo, toggleTodo, deleteTodo }) => {
       <ListItemText
         primary={
           <Typography variant="body2">
-            Date:
-            {todo.date ? new Date(todo.date).toLocaleDateString("en-US") : {}}
+            Date:{" "}
+            {todo.date ? new Date(todo.date).toLocaleDateString("en-US") : ""}
           </Typography>
         }
       />
