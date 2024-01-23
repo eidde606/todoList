@@ -39,6 +39,8 @@ const TodoList = () => {
       });
       fetchTodos();
       setNewTodo("");
+      setSelectedDate("");
+      setSelectedTime("");
       setShowMessage(true);
       setTimeout(() => {
         setShowMessage(false);
