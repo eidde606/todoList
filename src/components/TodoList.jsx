@@ -110,10 +110,6 @@ const TodoList = () => {
               type="date"
               value={selectedDate}
               onChange={(e) => setSelectedDate(e.target.value)}
-              label="Date"
-              InputLabelProps={{
-                shrink: true,
-              }}
               style={{
                 marginBottom: 10,
                 backgroundColor: "white",
@@ -126,7 +122,6 @@ const TodoList = () => {
               type="time"
               value={selectedTime}
               onChange={(e) => setSelectedTime(e.target.value)}
-              label="Time"
               style={{
                 marginBottom: 10,
                 backgroundColor: "white",
