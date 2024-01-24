@@ -107,6 +107,7 @@ const TodoList = () => {
                 borderColor: "red",
                 maxWidth: "100%",
                 overflow: "hidden",
+                whiteSpace: "nowrap",
               },
             }}
           />
