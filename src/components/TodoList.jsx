@@ -96,12 +96,18 @@ const TodoList = () => {
             value={newTodo}
             onChange={(e) => setNewTodo(e.target.value)}
             fullWidth
-            style={{
-              marginBottom: 10,
-              backgroundColor: "white",
-              borderRadius: "4px",
-              height: "55px",
-              borderColor: "red",
+            multiline
+            rows={3}
+            InputProps={{
+              style: {
+                marginBottom: 10,
+                backgroundColor: "white",
+                borderRadius: "4px",
+                height: "auto",
+                borderColor: "red",
+                maxWidth: "100%",
+                overflow: "hidden",
+              },
             }}
           />
           <div style={{ display: "flex", flexDirection: "column" }}>
